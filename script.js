@@ -1,6 +1,6 @@
 const card = document.getElementById('card');
-const letterWrap = document.getElementById('letter-wrap');
-const closeBtn = documetn.getElementById('close-btn');
+const letterWrap = document.getElementById('letterWrap');
+const closeBtn = document.getElementById('closeBtn');
 
 card.addEventListener('click', () => {
     letterWrap.classList.add('show');
