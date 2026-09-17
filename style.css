@@ -45,3 +45,11 @@ body {
     opacity: 1;
     pointer-events: auto;
 }
+
+#balloon-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0x;
+}
