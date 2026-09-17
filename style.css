@@ -51,5 +51,29 @@ body {
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    z-index: 0x;
+    z-index: 0;
+}
+
+.card {
+    z-index: 1;
+    position: relative;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 60px;
+    height: 80px;
+    background-color: #ff6b81;
+    border-radius: 50% 50% 50% 50%;
+    animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(-120vh)
+    }
 }
