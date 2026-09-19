@@ -11,6 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 1800px;
 }
 
 .card {
@@ -27,6 +28,14 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 1;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(.6.05, .2, 1), opacity 0.5s ease;
+}
+.card.open {
+    transform: rotateY(140deg);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .letter-wrap {
