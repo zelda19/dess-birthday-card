@@ -3,11 +3,17 @@ const letterWrap = document.getElementById('letterWrap');
 const closeBtn = document.getElementById('closeBtn');
 
 card.addEventListener('click', () => {
-    letterWrap.classList.add('show');
+    card.classList.add('open');
+    setTimeout(() => {
+        letterWrap.classList.add('show');
+    }, 400);
 });
 
 closeBtn.addEventListener('click', () => {
     letterWrap.classList.remove('show');
+    setTimeout(() => {
+        card.classList.remove('open');
+    }, 350);
 });
 
 const balloonContainer = document.getElementById('balloon-container');
@@ -35,3 +41,5 @@ function createBalloons() {
     }
 }
 createBalloons();
+
+
