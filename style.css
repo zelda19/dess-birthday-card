@@ -39,6 +39,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
+    z-index: 2;
 }
 
 .letter-wrap.show {
@@ -76,4 +77,37 @@ body {
     100% {
         transform: translateY(-120vh)
     }
+}
+
+.letter {
+  position: relative;
+  width: min(500px, 90vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #fff5f8;
+  color: #5c2a3d;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 30px 70px rgba(200, 60, 110, 0.4);
+  text-align: left;
+}
+
+.letter-heading {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e75480;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
