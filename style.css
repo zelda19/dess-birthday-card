@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
 
 * {
     box-sizing: border-box;
-
 }
+
 body {
     margin: 0;
     height: 100vh;
@@ -33,6 +34,12 @@ body {
     backface-visibility: hidden;
     transition: transform 0.8s cubic-bezier(.6, .05, .2, 1), opacity 0.5s ease;
 }
+
+.card:not(.open):hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(231, 84, 128, 0.45);
+}
+
 .card.open {
     transform: rotateY(140deg);
     opacity: 0;
@@ -71,16 +78,16 @@ body {
     width: 60px;
     height: 80px;
     background-color: #ff6b81;
-    border-radius: 50% 50% 50% 50%;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     animation: floatUp 10s linear infinite;
 }
 
 @keyframes floatUp {
     0% {
-        transform: translateY(0)
+        transform: translateY(0);
     }
     100% {
-        transform: translateY(-120vh)
+        transform: translateY(-120vh);
     }
 }
 
@@ -127,4 +134,10 @@ body {
 @keyframes pulse {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
+}
+
+.signature {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    margin-top: 15px;
 }
