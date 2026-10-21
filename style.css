@@ -15,9 +15,11 @@ body {
     perspective: 1800px;
 }
 
+/* BOOK COVER STYLE */
 .card {
     background: linear-gradient(155deg, #ffd3e2 0%, #ff9ebb 100%);
-    border-radius: 22px;
+    border-radius: 6px 22px 22px 6px; 
+    border-left: 14px solid #e75480; 
     padding: 40px;
     text-align: center;
     color: white;
@@ -32,6 +34,7 @@ body {
     z-index: 1;
     position: relative;
     backface-visibility: hidden;
+    transform-origin: left center; 
     transition: transform 0.8s cubic-bezier(.6, .05, .2, 1), opacity 0.5s ease;
 }
 
@@ -41,11 +44,12 @@ body {
 }
 
 .card.open {
-    transform: rotateY(140deg);
+    transform: rotateY(-130deg); 
     opacity: 0;
     pointer-events: none;
 }
 
+/* MODAL BACKGROUND */
 .letter-wrap {
     position: fixed;
     inset: 0;
@@ -64,6 +68,7 @@ body {
     pointer-events: auto;
 }
 
+/* BALLOONS */
 #balloon-container {
     position: fixed;
     inset: 0;
@@ -82,46 +87,64 @@ body {
     animation: floatUp 10s linear infinite;
 }
 
-@keyframes floatUp {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-120vh);
-    }
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 1px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.15);
 }
 
+@keyframes floatUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120vh); }
+}
+
+/* THE LETTER */
 .letter {
-  position: relative;
-  width: min(500px, 90vw);
-  max-height: 85vh;
-  overflow-y: auto;
-  background: #fff5f8;
-  color: #5c2a3d;
-  padding: 40px;
-  border-radius: 18px;
-  box-shadow: 0 30px 70px rgba(200, 60, 110, 0.4);
-  text-align: left;
+    position: relative;
+    width: min(500px, 90vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #fff5f8;
+    color: #5c2a3d;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 30px 70px rgba(200, 60, 110, 0.4);
+    text-align: left;
+    transform: translateY(30px);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.letter-wrap.show .letter {
+    transform: translateY(0);
 }
 
 .letter-heading {
-  font-weight: bold;
-  font-size: 1.4rem;
-  margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.letter-body p {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .close-btn {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #e75480;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e75480;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .hint {
@@ -140,14 +163,4 @@ body {
     font-family: 'Caveat', cursive;
     font-size: 1.6rem;
     margin-top: 15px;
-}
-
-.balloon::after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    width: 1px;
-    height: 15px;
-    background: rgba(0, 0, 0, 0.15);
 }
