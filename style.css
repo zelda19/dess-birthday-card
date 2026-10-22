@@ -15,7 +15,6 @@ body {
     perspective: 1800px;
 }
 
-/* BOOK COVER STYLE */
 .card {
     background: linear-gradient(155deg, #ffd3e2 0%, #ff9ebb 100%);
     border-radius: 6px 22px 22px 6px; 
